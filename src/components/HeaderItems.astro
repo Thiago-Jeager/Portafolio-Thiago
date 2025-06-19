@@ -1,0 +1,14 @@
+---
+interface Props {
+    href?: string;
+}
+const { href } = Astro.props;
+const isActive = Astro.url.pathname === href || (href === '/' && Astro.url.pathname === '/index');
+---
+<li class="list-none">
+    <a href={href}
+    class={`p-5 text-primary hover:bg-[#A6E1FA] hover:rounded-2xl transition-colors duration-200 ${isActive ? 'font-bold' : ''}`}
+    >
+        <slot>
+    </a>
+</li>
