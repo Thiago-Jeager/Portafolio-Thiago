@@ -12,6 +12,11 @@
 .text-secondary {
   color: var(--color-secondary);
 }
+
+.text-background {
+  color: var(--color-background);
+}
+
 .bg-primary {
   background-color: var(--color-background);
 }

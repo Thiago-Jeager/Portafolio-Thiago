@@ -1,9 +1,41 @@
 ---
-import astroLogo from '../assets/astro.svg';
-import background from '../assets/background.svg';
+import { profileConst } from "../const/profileConst.ts";
+import Greetings from "../assets/svg/greetings.astro";
+import SocialMedia from "./SocialMedia.astro";
 ---
 
-<div id="container" class="mx-auto flex flex-col items-center">
-	<h1>Inicio</h1>	
-</div>
-
+<section class="w-[90%] max-w-full px-2.5 py-5 mx-auto mt-8">
+  <div class="flex flex-col md:flex-row items-center">
+    <!-- Texto -->
+    <div class="flex-1 mb-8 md:mb-0">
+      <h1
+        class="text-center md:text-left text-3xl md:text-5xl xl:text-[70px] xl:mt-20 leading-tight text-primary"
+        style="font-family: 'Google Sans Bold';"
+      >
+        {profileConst.name}
+      </h1>
+      <h2
+        class="text-2xl lg:text-3xl text-primary md:text-left text-center"
+        style="font-family: 'Google Sans Bold Italic';"
+      >
+        {profileConst.nickname}
+      </h2>
+      <p
+        class="text-center md:text-left text-base md:text-xl xl:text-[40px] leading-tight text-secondary lg:mt-10 ml-0"
+        style="font-family: 'Google Sans Medium';"
+      >
+        {profileConst.description}
+      </p>
+      <!-- Aquí puedes agregar tus redes sociales o botones -->
+      <div class="mt-2.5 flex justify-center md:justify-start">
+        <SocialMedia />
+      </div>
+      <!-- Redes Sociales -->
+    </div>
+    <!-- Imagen/SVG -->
+    <div class="flex-1 flex items-center justify-center">
+      <Greetings class="w-full max-w-xs md:max-w-md lg:max-w-lg h-auto" />
+    </div>
+    <!-- Imagen/SVG -->
+  </div>
+</section>

@@ -1,0 +1,44 @@
+---
+import { skills } from "../const/skills.ts";
+import ManOnTheTable from "../assets/svg/ManOnTheTable.svg";
+import DeveloperActivity from "../assets/svg/DeveloperActivity.svg";
+import DesignImdg from "../assets/svg/DesingTools.svg";
+---
+
+<div>
+  {
+    skills.data.map((skill) => (
+      <div class="flex flex-col md:flex-row mb-10 items-center">
+        <div class="md:w-1/2 w-full flex items-center justify-center mb-4 md:mb-0 md:pt-24">
+          {/* Aquí tu lógica para el SVG según skill.fileName */}
+          {skill.fileName === "ManOnTheTable" && <ManOnTheTable />}
+          {skill.fileName === "DeveloperActivity" && <DeveloperActivity />}
+          {skill.fileName === "DesignImdg" && <DesignImdg />}
+        </div>
+        <div class="md:w-1/2 w-full h-full px-4">
+          <h2 class=" text-justify md:text-left text-3xl mb-2 md:text-[40px] lg:text-[56px]">
+            {skill.title}
+          </h2>
+          <div class="flex flex-wrap justify-center gap-2 mb-2">
+            {skill.softwareSkills.map((soft) => (
+              <span class="inline-flex items-center gap-1 px-2 py-1 rounded">
+                <i
+                  class={soft.fontAwesomeClassname+ " text-2xl md:text-6xl"}
+                  style={`color: ${soft.style?.color || "inherit"}; background-color: ${soft.style?.backgroundColor || "transparent"};`}
+                />
+                
+                  {soft.skillName}
+                
+              </span>
+            ))}
+          </div>
+          <ul class="pl-5 md:text-xl text-secondary list-none">
+            {skill.skills.map((desc) => (
+              <li>{desc}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    ))
+  }
+</div>

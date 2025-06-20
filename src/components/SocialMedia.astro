@@ -1,0 +1,26 @@
+---
+import { socialMediaLinks } from "../const/socialMedia.ts";
+---
+
+<div class="flex gap-4 social-media-div">
+  {
+    socialMediaLinks.map((media) => (
+      <a
+        href={media.link}
+        class="icon-button flex items-center justify-center w-12 h-12 rounded-full aspect-square transition-colors duration-300"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={`background-color: ${media.backgroundColor};`}
+      >
+        <i class={`fab ${media.fontAwesomeIcon} text-2xl text-white`} />
+      </a>
+    ))
+  }
+</div>
+
+<style is:global>
+.icon-button:hover {
+  background-color: #001C55 !important;
+  transition: background-color 0.3s ease-in;
+}
+</style>
