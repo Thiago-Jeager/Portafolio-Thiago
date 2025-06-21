@@ -1,0 +1,30 @@
+---
+import { certifications } from "../const/educationConst.ts";
+---
+
+<section class="main my-8" id="certs">
+  <div class="flex flex-wrap gap-6 justify-center">
+    {
+      certifications.certifications.map((cert) => (
+        <div class="w-full sm:w-80 bg-primary  rounded-lg shadow-xl flex flex-col items-center">
+          <div class="object-fill bg-white rounded-t-xl flex items-center justify-center w-full border-3 border-[#0E6BA877]">
+            {cert.logo_path && (
+              <img
+                src={`/assets/img/${cert.logo_path}`}
+                alt={cert.alt_name}
+                class="h-24 object-contain"
+                loading="lazy"
+              />
+            )}
+          </div>
+          <div class="mt-4 px-4 pb-4">
+            <h2 class="text-xl font-bold text-center">{cert.title}</h2>
+            <h3 class="text-base text-center leading-tight">{cert.subtitle}</h3>
+            <h4 class="text-base text-center leading-tight"> {cert.duration}</h4>
+            <h4 class="text-base text-center leading-tight"> {cert.date}</h4>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

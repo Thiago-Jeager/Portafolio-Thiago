@@ -1,0 +1,56 @@
+---
+import { degrees } from "../const/educationConst.ts";
+---
+
+{degrees.degrees.map((degree) => (
+  <div class="flex flex-col md:flex-row w-full justify-center items-center my-4 md:px-[72px]">
+    {degree.logo_path && (
+      <div class="w-40 h-40 flex-shrink-0 flex items-center justify-center p-2">
+        <img
+          src={`/assets/img/${degree.logo_path}`}
+          alt={degree.alt_name}
+          class="rounded-full shadow-xl object-contain w-full h-full"
+          style="background: transparent;"
+          loading="lazy"
+        />
+      </div>
+    )}
+    <div
+      class="flex-1 bg-primary rounded-lg shadow-2xl m-4 overflow-none "
+    >
+      <div class="flex flex-col md:flex-row items-center justify-between rounded-t-lg px-4 py-2 bg-tertiary">
+        <div class="flex-1 text-left">
+          <h2 class="font-bold text-xl md:text-2xl">
+            {degree.title}
+          </h2>
+          <h3 class=" text-center md:text-left text-lg md:text-xl mt-1 mb-1 leading-tight">
+            {degree.subtitle}
+          </h3>
+        </div>
+        <div class=" md:text-right text-xl md:w-1/4 w-full mt-2 md:mt-0">
+          <span class="font-medium">
+            {degree.duration}
+          </span>
+        </div>
+      </div>
+      <div class="px-4 py-2 text-left bg-primary">
+        {degree.descriptions &&
+          degree.descriptions.map((sentence) => (
+            <p class="mb-2 text-base leading-tight">{sentence}</p>
+          ))}
+      </div>
+      <div class="text-center md:text-right">
+        {degree.website_link && (
+          <a 
+            href={degree.website_link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block p-1.5 md:mr-4 mb-4 rounded bg-tertiary hover:bg-gray-200 transition text-xl"
+          >
+            Sitio Web
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+))}

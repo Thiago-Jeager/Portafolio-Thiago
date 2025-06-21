@@ -3,6 +3,7 @@
   --color-primary: #001C55;
   --color-secondary: #7F8DAA;
   --color-background: #EDF9FE;
+  --color-background-secondary: #0E6BA877;
   /* --color-background-secondary is used for background elements, while --color-primary is for text and accents, even though both share the same color value */
   /* --color-background-secondary: #001C55; */
 }
@@ -23,7 +24,9 @@
 .bg-secondary {
   background-color: var(--color-primary);
 }
-
+.bg-tertiary {
+  background-color: var(--color-background-secondary);
+}
 
 .header .menu-btn {
   display: none;

@@ -1,28 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import TopButton from "../components/Layout/TopButton.astro";
+import EducationSection from "../components/EducationSection.astro";
 ---
 
 <Layout title="Educación">
-    <main>
-        <section class="hero">
-            <h1>Education</h1>
-            <p>
-                Here you can find resources and information about educational opportunities, courses, and
-                more.
-            </p>
-            <section class="links">
-                
-                    Courses
-                    <svg width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                        ><path
-                            d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2Zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8Z"
-                            fill="#111827"></path
-                        ><path
-                            d="M16.707 9.293a1 1 0 00-1.414-1.414L11.586 11l3.707 3.707a1 1 0 001.414-1.414L13.414 11l3.293-3.293Z"
-                            fill="#111827"></path
-                    >
-                
-            </section>
-        </section>
-    </main>
+    <EducationSection />
+    <TopButton />
 </Layout>
