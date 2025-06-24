@@ -1,6 +1,8 @@
 export const profileConst = {
   name: "Santiago Loachamin",
   nickname: "( Thiago )",
+  profilePhoto: "profile.webp",
+  direction: "Machachi, Mejía, Ecuador",
   description: " Soy un profesional con un sólido conocimiento en bases de datos, programación y herramientas de ofimática con la capacidad para trabajar en equipo, aportar soluciones innovadoras y adaptarme a las necesidade del entorno tecnológico empresarial. ",
 //   author: "Santiago",
   year: new Date().getFullYear(),

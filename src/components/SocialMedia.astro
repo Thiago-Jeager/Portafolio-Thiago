@@ -2,12 +2,12 @@
 import { socialMediaLinks } from "../const/socialMedia.ts";
 ---
 
-<div class="flex gap-4 social-media-div">
+<div class="flex gap-4">
   {
     socialMediaLinks.map((media) => (
       <a
         href={media.link}
-        class="icon-button flex items-center justify-center w-12 h-12 rounded-full aspect-square transition-colors duration-300"
+        class="icon-button flex items-center justify-center w-12 h-12 rounded-full aspect-square duration-300 hover:scale-110 transition-all"
         target="_blank"
         rel="noopener noreferrer"
         style={`background-color: ${media.backgroundColor};`}
@@ -17,10 +17,3 @@ import { socialMediaLinks } from "../const/socialMedia.ts";
     ))
   }
 </div>
-
-<style is:global>
-.icon-button:hover {
-  background-color: #001C55 !important;
-  transition: background-color 0.3s ease-in;
-}
-</style>
