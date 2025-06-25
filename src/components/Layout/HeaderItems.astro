@@ -3,7 +3,8 @@ interface Props {
     href?: string;
 }
 const { href } = Astro.props;
-const isActive = Astro.url.pathname === href || (href === '/' && Astro.url.pathname === '/index');
+const normalize = (path:string | undefined) => path ? path.replace(/\/$/, '') : '';
+const isActive = normalize(Astro.url.pathname) === normalize(href);
 ---
 <li class="list-none">
     <a href={href}
