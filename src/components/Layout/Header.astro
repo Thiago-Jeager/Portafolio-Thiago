@@ -1,52 +1,62 @@
 ---
-import HeaderItems from '../Layout/HeaderItems.astro';
+import HeaderItems from "../Layout/HeaderItems.astro";
 ---
 
 <header x-data="{ open: false }" class="relative">
-  <nav class="block max-w-[90%] px-2.5 py-5 mx-auto transition-all duration-300 ease-in-out md:text-xs lg:text-base xl:text-xl">
+  <nav
+    class="block max-w-[90%] px-2.5 py-5 mx-auto transition-all duration-300 ease-in-out md:text-xs lg:text-base xl:text-xl"
+  >
     <div class="flex items-center h-16 justify-between">
       <!-- Logo -->
       <div class="flex text-2xl">
-        <a href="/Portafolio-Thiago" class="text-primary flex items-center justify-center">
+        <a
+          href="/Portafolio-Thiago"
+          class="text-primary flex items-center justify-center"
+        >
           <span>&lt;</span>
-          <span class="px-2.5 text-primary" style="font-family: 'Agustina'; font-weight: bold;">
+          <span
+            class="px-2.5 text-primary"
+            style="font-family: 'Agustina'; font-weight: bold;"
+          >
             Santiago
           </span>
           <span>/&gt;</span>
         </a>
       </div>
       <!-- Items: visibles solo en md o mayor -->
-      <div class="hidden md:flex items-center ">
+      <div class="hidden md:flex items-center">
         <HeaderItems href="/Portafolio-Thiago">Inicio</HeaderItems>
         <HeaderItems href="/Portafolio-Thiago/education">Educación</HeaderItems>
-        <HeaderItems href="/Portafolio-Thiago/experience">Experiencia</HeaderItems>
+        <HeaderItems href="/Portafolio-Thiago/experience"
+          >Experiencia</HeaderItems
+        >
         <HeaderItems href="/Portafolio-Thiago/projects">Proyectos</HeaderItems>
         <HeaderItems href="#contact">Contacto</HeaderItems>
       </div>
       <!-- Botón menú: visible solo en móviles -->
       <div class="flex md:hidden ml-2">
-       <!-- Botón hamburguesa animado -->
-<button
-  @click="open = !open"
-  type="button"
-  class="relative w-10 h-10 flex flex-col justify-center items-center group md:hidden"
-  aria-controls="mobile-menu"
-  :aria-expanded="open"
->
-  <span class="sr-only">Open main menu</span>
-  <span
-    :class="open ? 'rotate-45 translate-y-2' : ''"
-    class="block h-0.5 w-8 bg-secondary transition-all duration-300 ease-in-out"
-  ></span>
-  <span
-    :class="open ? 'opacity-0' : ''"
-    class="block h-0.5 w-8 bg-secondary my-1 transition-all duration-300 ease-in-out"
-  ></span>
-  <span
-    :class="open ? '-rotate-45 -translate-y-1' : ''"
-    class="block h-0.5 w-8 bg-secondary transition-all duration-300 ease-in-out"
-  ></span>
-</button>
+        <!-- Botón hamburguesa animado -->
+        <button
+          @click="open = !open"
+          type="button"
+          class="relative w-10 h-10 flex flex-col justify-center items-center group md:hidden"
+          aria-controls="mobile-menu"
+          :aria-expanded="open"
+        >
+          <span class="sr-only">Open main menu</span>
+          <span
+            :class="open ? 'rotate-45 translate-y-2' : ''"
+            class="block h-0.5 w-8 bg-secondary transition-all duration-300 ease-in-out"
+          ></span>
+          <span
+            :class="open ? 'opacity-0' : ''"
+            class="block h-0.5 w-8 bg-secondary my-1 transition-all duration-300 ease-in-out"
+          ></span>
+          <span
+            :class="open ? '-rotate-45 -translate-y-1' : ''"
+            class="block h-0.5 w-8 bg-secondary transition-all duration-300 ease-in-out"
+          ></span>
+        </button>
       </div>
     </div>
     <!-- Menú móvil animado -->
@@ -63,9 +73,15 @@ import HeaderItems from '../Layout/HeaderItems.astro';
     >
       <nav class="flex flex-col gap-4">
         <HeaderItems href="/Portafolio-Thiago">Inicio</HeaderItems>
-        <HeaderItems href="/Portafolio-Thiago/mi-repo/education">Educación</HeaderItems>
-        <HeaderItems href="/Portafolio-Thiago/mi-repo/experience">Experiencia</HeaderItems>
-        <HeaderItems href="/Portafolio-Thiago/mi-repo/projects">Proyectos</HeaderItems>
+        <HeaderItems href="/Portafolio-Thiago/education"
+          >Educación</HeaderItems
+        >
+        <HeaderItems href="/Portafolio-Thiago/experience"
+          >Experiencia</HeaderItems
+        >
+        <HeaderItems href="/Portafolio-Thiago/projects"
+          >Proyectos</HeaderItems
+        >
         <HeaderItems href="#contact">Contacto</HeaderItems>
       </nav>
     </div>
